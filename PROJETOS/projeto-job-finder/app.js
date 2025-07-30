@@ -2,12 +2,16 @@
 const express = require("express");
 const app = express();
 const db = require("./db/connection.js");
+const bodyParser = require("body-parser");
 
 const PORT = 3000;
 
 app.listen(PORT, function () {
   console.log(`O Express está rodando na porta: ${PORT}`);
 });
+
+// body parser
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // db connection
 db.authenticate()
@@ -22,6 +26,9 @@ db.authenticate()
 app.get("/", (req, res) => {
   res.send("Deu certo!");
 });
+
+// Importando as rotas de jobs
+app.use('/jobs', require('./route/jobs.js'));
 
 // Tem uma ferramenta chamada nodemon que pormite atualizar o projeto em tempo real
 // Para instalar, use o comando: npm install nodemon --save-dev
