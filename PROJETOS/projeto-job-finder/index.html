@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CDN Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Job Finder</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light px-4">
+            <a class="navbar-brand" href="index.html">Job Finder</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ver Vagas</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-primary text-white" href="add.html">Abrir Vaga</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<div id="top-container" class="container-fluid">
+    <h1 id="main-title" class="text-center">Encontre o emprego dos sonhos</h1>
+    <p id="main-subtitle" class="text-center">Descubra as melhores oportunidades de trabalho e dê o próximo passo na sua carreira.</p>
+
+    <form id="search-form" class="d-flex justify-content-center" action="">
+        <input type="text" class="form-control me-2 w-50" id="job" name="job"
+            placeholder="Digite a vaga que está buscando">
+        <button type="submit" class="btn btn-primary">Procurar</button>
+    </form>
+</div>
+
+    <main>
+        <div id="jobs-container" class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 id="job-list-title">Veja as vagas em destaque</h2>
+                    <ul id="job-list" class="list-group">
+                        <li class="list-group-item new-job">
+                            <img src="public/img/company.jpg" alt="company">
+                            <p>Empresa</p>
+                            <h2>Título da vaga</h2>
+                            <p>R$2000,00</p>
+                            <span class="new-job-label">Nova</span>
+                            <a class="btn btn-primary">Ver vaga</a>
+                        </li>
+
+                        <li class="list-group-item">
+                            <img src="public/img/company.jpg" alt="company">
+                            <p>Empresa</p>
+                            <h2>Título da vaga</h2>
+                            <p>R$2000,00</p>
+                            <a class="btn btn-primary">Ver vaga</a>
+                        </li>
+
+                        <li class="list-group-item">
+                            <img src="public/img/company.jpg" alt="company">
+                            <p>Empresa</p>
+                            <h2>Título da vaga</h2>
+                            <p>R$2000,00</p>
+                            <a class="btn btn-primary">Ver vaga</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

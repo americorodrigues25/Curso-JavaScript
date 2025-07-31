@@ -16,7 +16,7 @@ router.post("/add", (req, res) => {
   // inserir dados no sistema
   job.create({
     title,
-    description,
+    description, 
     salary,
     company,
     email,
