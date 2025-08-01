@@ -155,3 +155,69 @@
 .new-job .new-job-label {
     display: block;
 }
+
+/* add.html - form */
+#add-form-container {
+  margin-top: 100px;
+  padding: 0 20px;
+}
+
+#add-form-container h1 {
+  margin-bottom: 20px;
+}
+
+#form-box {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 30px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .30);
+}
+
+#form-box h2 {
+  margin-bottom: 20px;
+  color: #f03e3e;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#form-box label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+#form-box form input, #form-box form textarea {
+  border: 2px solid #ccc;
+  background-color: #f8f9fa;
+}
+
+#form-box .form-group {
+  margin-bottom: 15px;
+}
+
+#form-box .form-control {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+}
+
+#form-box .form-control:focus {
+  border-color: #f03e3e;
+  box-shadow: 0 0 5px rgba(240, 62, 62, 0.5);
+}
+
+#form-box .btn {
+  background-color: #f03e3e;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+#form-box .btn:hover {
+  background-color: #d02a2a;
+}
