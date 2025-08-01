@@ -1,5 +1,8 @@
 //Aqui é a configuração base do express
 const express = require("express");
+const exphbs = require("express-handlebars");
+const path = require("path");
+// Importando o módulo de conexão com o banco de dados
 const app = express();
 const db = require("./db/connection.js");
 const bodyParser = require("body-parser");
@@ -12,6 +15,17 @@ app.listen(PORT, function () {
 
 // body parser
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// handlebars cria um motor de visualização que permite renderizar HTML dinâmico
+app.set("views", path.join(__dirname, "views")); // Define o diretório onde estão os arquivos de visualização
+app.set("view engine", "handlebars"); // Define o motor de visualização como Handlebars
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+  })
+);
+app.set("view engine", "handlebars");
 
 // db connection
 db.authenticate()
@@ -28,7 +42,7 @@ app.get("/", (req, res) => {
 });
 
 // Importando as rotas de jobs
-app.use('/jobs', require('./route/jobs.js'));
+app.use("/jobs", require("./route/jobs.js"));
 
 // Tem uma ferramenta chamada nodemon que pormite atualizar o projeto em tempo real
 // Para instalar, use o comando: npm install nodemon --save-dev
