@@ -8,6 +8,12 @@ router.get('/test', (req, res) => {
     res.send("Rota funcinouuuuuuuu!"); 
 });
 
+// Define a rota para exibir o formulário de adição de vagas
+// Você pode acessar essa rota em http://localhost:3000/jobs/add
+router.get("/add", (req, res) => {
+  res.render("add");
+});
+
 // Define a rota para obter todas as vagas
 router.post("/add", (req, res) => {
 
