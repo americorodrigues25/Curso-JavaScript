@@ -1,11 +1,13 @@
 //Aqui é a configuração base do express
 const express = require("express");
-const exphbs = require("express-handlebars");
+const { engine } = require("express-handlebars");
 const path = require("path");
 // Importando o módulo de conexão com o banco de dados
 const app = express();
 const db = require("./db/connection.js");
 const bodyParser = require("body-parser");
+// Importando o modelo de Job
+const jobs = require("./models/Job.js");
 
 const PORT = 3000;
 
@@ -21,11 +23,11 @@ app.set("views", path.join(__dirname, "views")); // Define o diretório onde est
 app.set("view engine", "handlebars"); // Define o motor de visualização como Handlebars
 app.engine(
   "handlebars",
-  exphbs({
-    defaultLayout: "main",
-  })
+  engine({ defaultLayout: "main", extname: ".handlebars" })
 );
-app.set("view engine", "handlebars");
+
+// Define o diretório onde estão os arquivos estáticos (CSS, JS, imagens)
+app.use(express.static(path.join(__dirname, "public")));
 
 // db connection
 db.authenticate()
@@ -38,7 +40,11 @@ db.authenticate()
 
 // routes
 app.get("/", (req, res) => {
-  res.send("Deu certo!");
+  jobs.findAll({ order: [["createdAt", "DESC"]] }).then((jobs) => {
+    res.render("index", {
+      jobs
+    });
+  });
 });
 
 // Importando as rotas de jobs
