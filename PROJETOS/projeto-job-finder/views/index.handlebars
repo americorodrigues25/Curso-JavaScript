@@ -3,7 +3,7 @@
   <p id="main-subtitle" class="text-center">Descubra as melhores oportunidades
     de trabalho e dê o próximo passo na sua carreira.</p>
 
-  <form id="search-form" class="d-flex justify-content-center" action="">
+  <form id="search-form" class="d-flex justify-content-center" action="/" method="GET">
     <input
       type="text"
       class="form-control me-2 w-50"
@@ -19,14 +19,18 @@
   <div id="jobs-container" class="container">
     <div class="row">
       <div class="col-md-12">
-        <h2 id="job-list-title">Veja as vagas em destaque</h2>
+        {{#if search}}
+          <h2 id="job-list-title">Buscando vagas que contem: {{search}}</h2>
+        {{else}}
+          <h2 id="job-list-title">Veja as vagas em destaque</h2>
+        {{/if}}
         <ul id="job-list" class="list-group">
             {{#each jobs}}
           <li class="list-group-item {{#if dataValues.new_job}} new-job{{/if}}">
             <img src="/img/company.jpg" alt="company" />
             <p>{{dataValues.company}}</p>
             <h2>{{dataValues.title}}</h2>
-            <p>{{dataValues.salary}}</p>
+            <p>R$ {{dataValues.salary}}</p>
             <span class="new-job-label">Nova</span>
             <a class="btn btn-primary">Ver vaga</a>
           </li>
