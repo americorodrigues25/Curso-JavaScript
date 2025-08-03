@@ -8,6 +8,8 @@ const db = require("./db/connection.js");
 const bodyParser = require("body-parser");
 // Importando o modelo de Job
 const jobs = require("./models/Job.js");
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 const PORT = 3000;
 
@@ -40,11 +42,32 @@ db.authenticate()
 
 // routes
 app.get("/", (req, res) => {
-  jobs.findAll({ order: [["createdAt", "DESC"]] }).then((jobs) => {
-    res.render("index", {
-      jobs
-    });
-  });
+  let search = req.query.job; // Variável para armazenar a busca
+  let query = "%" + search + "%"; // Formata a busca para o Sequelize : PH -> PHP, Word -> WordPress, etc.
+
+  if (!search) {
+    jobs
+      .findAll({ order: [["createdAt", "DESC"]] })
+      .then((jobs) => {
+        res.render("index", {
+          jobs,
+          search,
+        });
+      })
+      .catch((err) => console.log(err));
+  } else {
+    jobs
+      .findAll({
+        where: { title: { [Op.like]: query } },
+        order: [["createdAt", "DESC"]],
+      })
+      .then((jobs) => {
+        res.render("index", {
+          jobs,
+          search,
+        });
+      });
+  }
 });
 
 // Importando as rotas de jobs
