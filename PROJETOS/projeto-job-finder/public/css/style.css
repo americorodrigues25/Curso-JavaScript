@@ -275,7 +275,7 @@
 
 /* Layout responsivo */
 
-@media (min-width: 481px) and (max-width: 1199px) {
+@media (min-width: 400px) and (max-width: 1199px) {
   /* nav */
   #navbarNav {
     text-align: center;
