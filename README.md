@@ -112,12 +112,12 @@ O jogo foi construído **do zero**, sem bibliotecas externas, com foco total em 
 
 Durante o desenvolvimento deste projeto, aprendi:
 
-- 🧠 Como manipular o **DOM** com **JavaScript puro**
-- 🧩 Criar **templates dinâmicos** para botões e perguntas
-- 🎯 Aplicar **event listeners** para garantir interatividade com o usuário
-- 🎨 Usar **classes CSS** de forma **condicional**, adaptando os estilos dinamicamente
-- ⏱ Controlar o **fluxo de execução** com `setTimeout` e variáveis de estado
-- 🏁 Criar **lógica de pontuação** e **finalização do jogo**, com feedback ao usuário
+- Como manipular o **DOM** com **JavaScript puro**
+- Criar **templates dinâmicos** para botões e perguntas
+- Aplicar **event listeners** para garantir interatividade com o usuário
+- Usar **classes CSS** de forma **condicional**, adaptando os estilos dinamicamente
+- Controlar o **fluxo de execução** com `setTimeout` e variáveis de estado
+- Criar **lógica de pontuação** e **finalização do jogo**, com feedback ao usuário
 
 ---
 
