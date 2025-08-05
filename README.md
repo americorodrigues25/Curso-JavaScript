@@ -234,3 +234,5 @@ Durante o desenvolvimento deste projeto, foram aplicados e reforçados os seguin
 ```bash
 git clone https://github.com/seu-usuario/jogo-da-velha.git
 ```
+
+<div align="center">💻 Feito por Américo Rodrigues</div>
