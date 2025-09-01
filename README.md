@@ -1,4 +1,4 @@
-# Curso de JavaScript - Matheus Battisti
+# Curso de JavaScript
 
 ## Este repositótio é onde tem todo o conteudo das video aulas que realizei durante o curso de JavaScript do básico ao avançado.
 
