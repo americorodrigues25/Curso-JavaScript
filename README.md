@@ -1,6 +1,6 @@
 # Curso de JavaScript
 
-## Este repositótio é onde tem todo o conteudo das video aulas que realizei durante o curso de JavaScript do básico ao avançado.
+## Este repositótio é onde tem todo o conteudo do curso que realizei de JavaScript do básico ao avançado.
 
 # Projetos 👇
 
